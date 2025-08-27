@@ -38,7 +38,7 @@
 
 ## DESCRIPTION
 
-* During a security assessment of the *Small CRM in PHP*, a critical SQL injection vulnerability was identified in the /crm/admin/manage-tickets.php file. The flaw arises from insufficient validation of the aremark parameter, which is directly inserted into SQL statement. Exploitation of this flaw allows unauthenticated attackers to inject arbitrary SQL statements, gain access to sensitive data, escalate privileges, and potentially gain control of the application environment. Immediate remediation is strongly advised to mitigate the risk of exploitation.
+* A time-based blind SQL injection vulnerability exists in *Small CRM in PHP V4.0* within the /crm/admin/manage-tickets.php component, due to improper handling of the aremark POST parameter. The application directly concatenates unsanitized user input into SQL queries without using prepared statements, allowing remote, unauthenticated attackers to manipulate database queries. Successful exploitation can lead to unauthorized access to sensitive data, modification of database contents, and potential full compromise of the application environment, posing a severe threat to confidentiality, integrity, and availability.
 
 ## Vulnerability Details and Proof of Concept (PoC)
 
